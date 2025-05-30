@@ -44,9 +44,17 @@ detector.model.to(device).eval()
 # Lista de nombres de las clases de formas de rostro
 names = ['Heart', 'Oblong', 'Oval', 'Round', 'Square']
 # Umbral de confianza mínima para mostrar la etiqueta de la forma de rostro
-# Si la predicción es menor a este valor, no se muestra la etiqueta
+# Si la predicción de la forma de rostro tiene una probabilidad menor a este valor,
+# NO se muestra la etiqueta ni las recomendaciones en pantalla.
+# Ejemplo: Si CONF_THR = 0.7, solo se muestran resultados con 70% de confianza o más.
+# Si CONF_THR = 0, siempre se muestra la predicción, aunque la confianza sea baja.
 CONF_THR = 0        # confianza mínima para mostrar etiqueta
-# Factor de suavizado exponencial para estabilizar la predicción entre cuadros
+
+# Factor de suavizado exponencial para estabilizar la predicción entre cuadros.
+# El suavizado ayuda a que la predicción no "salte" entre formas distintas por pequeñas variaciones.
+# smooth = ALPHA * smooth + (1 - ALPHA) * probs
+# Un ALPHA bajo (ej: 0.1) hace el suavizado más lento y estable; uno alto (ej: 0.8) responde más rápido.
+# Ejemplo: Si la predicción cambia bruscamente, el suavizado hace la transición gradual.
 ALPHA    = 0.3      # suavizado exponencial
 
 # Recomendaciones segun forma de cara
