@@ -17,18 +17,18 @@ names = ['Heart', 'Oblong', 'Oval', 'Round', 'Square']
 CONF_THR = 0        # confianza mínima para mostrar etiqueta
 ALPHA    = 0.3      # suavizado exponencial
 
-# Recomendaciones según forma de cara
+# Recomendaciones segun forma de cara
 recommendations = {
     'Heart': {
         'cortes': '- Bob largo con capas que empiezan a la altura de la barbilla\n'
                  '- Flequillo lateral suave y desfilado\n'
-                 '- Cortes en capas largas que añaden volumen en los lados',
-        'lentes': '- Aviador clásico con puente fino\n'
+                 '- Cortes en capas largas que anaden volumen en los lados',
+        'lentes': '- Aviador clasico con puente fino\n'
                  '- Cat-eye con bordes suavizados\n'
                  '- Lentes redondos con detalles en la parte superior'
     },
     'Oblong': {
-        'cortes': '- Bob a la altura de la mandíbula con flequillo recto\n'
+        'cortes': '- Bob a la altura de la mandibula con flequillo recto\n'
                  '- Capas medianas que empiezan en la mejilla\n'
                  '- Corte shaggy con textura y volumen en los lados',
         'lentes': '- Rectangulares anchos con bordes suaves\n'
@@ -37,19 +37,19 @@ recommendations = {
     },
     'Oval': {
         'cortes': '- Pixie con flequillo largo y texturizado\n'
-                 '- Bob asimétrico con capas largas\n'
+                 '- Bob asimetrico con capas largas\n'
                  '- Corte largo en capas con volumen en la corona',
-        'lentes': '- Aviador clásico tamaño medio\n'
+        'lentes': '- Aviador clasico tamano medio\n'
                  '- Wayfarer proporcionados al rostro\n'
-                 '- Geométricos balanceados con tu rostro'
+                 '- Geometricos balanceados con tu rostro'
     },
     'Round': {
-        'cortes': '- Bob angular con largos asimétricos\n'
+        'cortes': '- Bob angular con largos asimetricos\n'
                  '- Capas largas que empiezan debajo de la barbilla\n'
                  '- Corte pixie con volumen en la corona y lados ajustados',
         'lentes': '- Rectangulares con esquinas definidas\n'
                  '- Cuadrados con puente alto\n'
-                 '- Geométricos angulares que alargan el rostro'
+                 '- Geometricos angulares que alargan el rostro'
     },
     'Square': {
         'cortes': '- Capas suaves que empiezan en la mejilla\n'
@@ -101,8 +101,8 @@ def put_text_multiline(img, text, org, font_face, font_scale, color, thickness):
 # ── cámara ────────────────────────────────────────────────────────────────────
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
-    raise RuntimeError("No se pudo abrir la cámara.")
-print("✅  Cámara abierta. Pulsa ESC para salir.")
+    raise RuntimeError("No se pudo abrir la camara.")
+print("✅  Camara abierta. Pulsa ESC para salir.")
 
 while True:
     ok, frame = cap.read()
